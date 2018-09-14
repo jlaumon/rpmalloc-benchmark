@@ -170,3 +170,5 @@ if toolchain.name() == "gcc":
 	if target.is_linux():
 		generator.bin(module = 'lockless', sources = ['benchmark.c', 'll_alloc.c'], binname = 'benchmark-lockless', basepath = 'benchmark', implicit_deps = [benchmark_lib, test_lib], libs = lockless_depend_libs, includepaths = includepaths, variables = {'defines': ['USE_PREFIX']})
 
+generator.bin(module = 'ltalloc', sources = ['benchmark.c', 'ltalloc.cc'], binname = 'benchmark-ltalloc', basepath = 'benchmark', implicit_deps = [benchmark_lib, test_lib], libs = ['benchmark', 'test'], includepaths = includepaths)
+
